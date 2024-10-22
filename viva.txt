@@ -1,0 +1,84 @@
+Good luck with your viva today! Here's a simple breakdown of the key architectural styles:
+
+1. **Dataflow Systems**:  
+   - These systems process data in a flow, where each component (like filters) transforms the data before passing it to the next component.
+   - Commonly used in pipelines and filters, with each filter having three ports: standard input, standard output, and error output.
+
+2. **Pipes and Filters**:  
+   - Data passes through a sequence of filters, where each one processes the data and sends it to the next.
+   - Each filter can handle input, standard output, and error output.
+
+3. **Repositories/Data-centered Architecture**:  
+   - Data is stored centrally in a repository, accessed by different components.
+   - Components are independent and communicate through the shared data.
+   - Examples: Databases (RDBMS).
+
+4. **Call-and-return Systems**:  
+   - Main control is with a central program that calls other subprograms.
+   - Commonly used for organizing code into smaller, manageable parts.
+   - Two types:  
+     - Main program/subroutine architecture (hierarchical control).
+     - Remote Procedure Call (RPC) architecture (distributed components).
+
+5. **Object-oriented Systems**:  
+   - Focus on encapsulating data and the methods that manipulate them.
+   - Main features: encapsulation, inheritance, polymorphism, and message passing.
+
+6. **Layered Architecture**:  
+   - The system is divided into layers where each layer has a specific function.
+   - Encourages separation of concerns; components with similar functionalities are grouped together.
+   - Layers communicate with each other, promoting modularity.
+
+7. **Repository Architecture**:  
+   - Passive data store; clients actively check and interact with the data.
+
+8. **Blackboard Architecture**:  
+   - Active data store; components passively wait for data changes and react accordingly.
+
+Just remember the key ideas: how data flows or is stored, how systems interact (call and return), and how layers or components communicate. You're going to do great!
+
+
+
+
+Here’s a simple explanation of the architectural patterns you mentioned:
+
+1. **Client-Server Pattern**:  
+   - The system is divided into two parts: clients and servers.  
+   - Clients send requests to the server, which processes them and sends back responses.  
+   - Email systems use this pattern.  
+   - **Advantages**: Easy to maintain, improves data sharing.  
+   - **Disadvantages**: Servers may become overloaded with many client requests.
+
+2. **Master-Slave Pattern**:  
+   - The master assigns tasks to multiple slave components that work in parallel.  
+   - The master waits for all slaves to complete their tasks.  
+   - **Advantages**: Slaves can be taken offline without affecting the master.  
+   - **Disadvantages**: If the master fails, a manual intervention is needed to assign a new master.
+
+3. **Broker Pattern**:  
+   - Useful for systems where clients and servers are of different types or architectures.  
+   - The broker coordinates between clients and servers. It finds the right server to handle a client's request and routes the responses back.  
+   - **Advantage**: Helps manage complex systems with different types of clients and servers.
+
+4. **Peer-to-Peer (P2P) Pattern**:  
+   - Every computer in the network can act as both a client and a server.  
+   - There is no central authority; each node has equal power.  
+   - **Advantages**: The network grows stronger as more computers join.  
+   - **Disadvantages**: Difficult to manage security and data consistency across nodes.
+
+5. **Model-View-Controller (MVC) Pattern**:  
+   - This separates an application into three parts:  
+     - **Model**: Manages the data.  
+     - **View**: Displays the data to the user.  
+     - **Controller**: Connects the model and the view, deciding what actions to take based on user input.  
+   - **Advantages**: Simplifies maintenance and testing of applications.
+
+6. **Event-Bus Pattern**:  
+   - This is based on events and has four parts:  
+     - **Event Source**: Where the event originates.  
+     - **Event Listener**: Components that listen for specific events.  
+     - **Channel**: Carries the events from the source to the listener.  
+     - **Event Bus**: The main channel for all communication.  
+   - **Advantage**: Listeners only respond to events they care about.
+
+Each of these patterns solves a specific architectural challenge and can be applied based on the needs of your system.
